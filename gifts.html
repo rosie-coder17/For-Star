@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gifts for Star</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="letters.html">Letters</a>
+      <a href="poems.html">Poems</a>
+      <a href="songs.html">Mixtapes</a>
+      <a href="gifts.html">Her</a>
+    </nav>
+
+    <div class="center-container">
+      <div class="collage-card">
+        <img src="images/star.jpg" alt="Her Picture" />
+        <p>“The most beautiful person in my world 🌟”</p>
+      </div>
+
+      <button id="loveBtn">Click Me 💖</button>
+
+      <p id="loveMessage" class="hidden-message">
+        Written with love from Rosie 💌
+      </p>
+    </div>
+
+    <div class="hearts-container"></div>
+
+    <script>
+      // Button click effect
+      document.getElementById("loveBtn").addEventListener("click", function () {
+        // Show message
+        document.getElementById("loveMessage").classList.add("show-message");
+
+        // Create floating hearts
+        for (let i = 0; i < 20; i++) {
+          let heart = document.createElement("div");
+          heart.classList.add("heart");
+          heart.innerHTML = "💖";
+          heart.style.left = Math.random() * 100 + "vw";
+          heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+          document.querySelector(".hearts-container").appendChild(heart);
+
+          setTimeout(() => {
+            heart.remove();
+          }, 5000);
+        }
+      });
+    </script>
+  </body>
+</html>

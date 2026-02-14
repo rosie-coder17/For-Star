@@ -1,0 +1,287 @@
+/* ----------------- GENERAL ----------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #ffc0cb; /* Soft pink background for all pages */
+  color: #000;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  line-height: 1.6;
+  padding-bottom: 50px;
+}
+
+a {
+  text-decoration: none;
+  color: #ff69b4;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid #ff69b4;
+}
+
+nav a {
+  margin: 0 10px;
+  font-weight: 600;
+  color: #ff1493;
+}
+
+nav .logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ff1493;
+}
+
+/* ----------------- HERO SECTION (INDEX) ----------------- */
+.hero {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  background: #ff69b4;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+/* ----------------- FLOATIES ----------------- */
+.floaties {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.floatie {
+  position: absolute;
+  animation-name: float;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* ----------------- EXPANDABLE BOXES ----------------- */
+.expandable {
+  cursor: pointer;
+  transition: all 0.4s ease;
+  overflow: hidden;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.expandable:hover {
+  transform: translateY(-5px);
+}
+
+.expandable.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  z-index: 9999;
+  padding: 40px;
+  overflow-y: auto;
+  border-radius: 0;
+}
+
+/* ----------------- SECTIONS ----------------- */
+section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* ----------------- TITLES ----------------- */
+h1,
+h2 {
+  font-family: "Playfair Display", serif;
+  margin-bottom: 15px;
+  color: #ff1493;
+}
+
+/* ----------------- CARDS ----------------- */
+.card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  margin: 20px auto;
+  max-width: 600px;
+  transition: 0.4s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* ----------------- FOOTER ----------------- */
+footer {
+  padding: 40px;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #333;
+}
+
+/* ----------------- SPOTIFY IFRAME ----------------- */
+iframe {
+  border-radius: 12px;
+  margin: 10px 0;
+}
+/* -------- CENTER EVERYTHING -------- */
+.center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+/* Smaller centered image */
+.collage-card {
+  width: 250px;
+  text-align: center;
+}
+
+.collage-card img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #00f0ff;
+}
+
+/* Button */
+#loveBtn {
+  margin-top: 25px;
+  padding: 12px 25px;
+  border-radius: 30px;
+  border: none;
+  background: #ff69b4;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#loveBtn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #ff69b4;
+}
+
+/* Message */
+.hidden-message {
+  opacity: 0;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  transition: opacity 1s ease;
+}
+
+.show-message {
+  opacity: 1;
+}
+
+/* Floating hearts */
+.hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.heart {
+  position: absolute;
+  bottom: 0;
+  font-size: 24px;
+  animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
+/* Hide full poem initially */
+.full-poem {
+  display: none;
+  margin-top: 15px;
+}
+
+/* Preview text styling */
+.preview {
+  font-size: 1rem;
+}
+
+.click-more {
+  color: #ff1493;
+  font-weight: bold;
+}
+
+/* When expanded */
+.expandable.fullscreen .full-poem {
+  display: block;
+}
+
+.expandable.fullscreen .preview {
+  display: none;
+}
